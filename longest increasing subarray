@@ -1,0 +1,34 @@
+//longest increasing subarray//
+#include <stdio.h>
+void findLongestIncreasingSubarray(int arr[], int size) {
+    int max_length = 1; // Length of the longest increasing subarray
+    int current_length = 1; // Length of the current increasing subarray
+    int end = 0; // Ending index of the current increasing subarray
+ for (int i = 1; i < size; i++) {
+  if (arr[i] > arr[i - 1])
+current_length++;
+   } else {   
+if (current_length > max_length) {
+    max_length = current_length;
+      end = i - 1;
+ }
+  current_length = 1    }
+    }
+
+    if (current_length > max_length) {
+        max_length = current_length;
+        end = size - 1;
+    }
+    printf("The longest increasing subarray is: ");
+    for (int i = end - max_length + 1; i <= end; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+int main() {
+    int arr[] = {2, 11, 3, 5, 13, 7, 19, 17, 23};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    findLongestIncreasingSubarray(arr, size);
+    return 0;
+}
