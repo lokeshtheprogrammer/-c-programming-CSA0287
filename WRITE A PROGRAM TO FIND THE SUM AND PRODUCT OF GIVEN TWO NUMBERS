@@ -1,0 +1,10 @@
+// Online C compiler to run C program online WRITE A PROGRAM TO FIND THE SUM AND PRODUCT OF GIVEN TWO NUMBERS 
+#include <stdio.h>
+
+int main() {
+    int a,b,sum,product;
+    scanf("%d %d",&a,&b);
+    sum=a+b;
+    product=a*b;
+    printf("%d %d ,sum,product");
+}
