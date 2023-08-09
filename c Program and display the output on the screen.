@@ -1,0 +1,20 @@
+//Ask the user to enter any positive integer. Then divides the given number into individuals and adds those individual (Sum) digits. Compile and execute the c Program and display the output on the screen.//
+#include<stdio.h>  
+ int main()    
+{    
+int n,sum=0,m;    
+printf("Enter a number:");    
+scanf("%d",&n);    
+if(n>0){
+while(n>0)    
+{    
+m=n%10;    
+sum=sum+m;    
+n=n/10;    
+}    
+printf("Sum =%d",sum);      
+}
+else{
+	printf("Invalid input");
+}   
+}
