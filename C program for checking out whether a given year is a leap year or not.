@@ -1,0 +1,49 @@
+/*1.	A year has 365 days but leap year consists of 366 days. This one day is added in the month of February. This month which generally has 28 days and also known as the shortest month in a year would get added with an extra day, which gives us a total of 29 days in that month. It is based on the Georgian calendar. Compile and Execute the C program for checking out whether a given year is a leap year or not.
+
+Sample Input:
+Enter Date : 04/11/1947
+
+Sample Output:
+Given year is Non Leap Year
+
+Test cases:
+1.	04/11/19.47
+2.	11/15/1936
+3.	31/45/1996
+4.	64/09/1947
+5.	00/00/2000
+*/
+#include<stdio.h>
+main(){
+int i,j,date,month,year,c=0;
+float y;
+	char str[20],strdate[20],strmonth[20],stryear[20],temp[2],token[20];
+    printf("Enter date (dd/mm/yy): ");
+    scanf("%d/%d/%f", &date,&month,&y);
+    year=(int)y;
+    y=y-year;
+	if(date>0 || date>31){
+		printf("Invalid input...");
+	}
+	else if(month>0 || month>12){
+		printf("invalid input...");
+	}
+	else if(year>0 || y>0){
+		printf("invalid input...");
+	}
+	else{
+		if (year % 400 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   else if (year % 100 == 0) {
+      printf("%d is not a leap year.", year);
+   }
+   else if (year % 4 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   else {
+      printf("%d is not a leap year.", year);
+   }
+	}
+}
+
