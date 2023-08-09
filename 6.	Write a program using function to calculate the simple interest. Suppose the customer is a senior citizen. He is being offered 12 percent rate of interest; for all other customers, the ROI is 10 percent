@@ -1,0 +1,48 @@
+//6.	Write a program using function to calculate the simple interest. Suppose the customer is a senior citizen. He is being offered 12 percent rate of interest; for all other customers, the ROI is 10 percent//
+/*sample Input:
+Enter the principal amount: 200000
+Enter the no of years:  3
+Is customer senior citizen (y/n): n
+Sample Output:
+Interest: 60000
+Test Cases:
+1.	Principal: 2000 , Years: 0
+2.	Principal: 20000 , Years: -2
+3.	Principal: -2000 , Years: 2
+4.	Principal: 2 , Years: 2000
+5.	Principal: 0 , Years: 5
+*/
+#include<stdio.h>
+float interest(int P,  int N)
+{	char ch[1];
+	printf("Are you a senior citizen(y/n): ");
+    scanf("%s", &ch);
+     float SI,r;
+     if(strcmp("y",ch)==0){
+    	r=12;
+	}
+    else if(strcmp("n",ch)==0){
+    	r=10;
+    }
+     SI=P*r*N/100.0;
+     return SI;
+}      
+main()
+{
+     int p,n;
+     float r,Z;
+          printf("Enter Principal Amount : ");
+          scanf("%d",&p);
+          printf("Enter Time Period : ");
+          scanf("%d",&n);
+    	  if(p>0 && n>0){
+          Z=interest(p,n);
+          printf("\nSimple Interest : %.2f\n",Z);
+      }
+      else{
+      	printf("Invalid input");
+	  }
+
+}
+ 
+
